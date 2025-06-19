@@ -10,3 +10,15 @@ services:
       POSTGRES_PASSWORD: senha123
     ports:
       - "5432:5432"
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@email.com
+      PGADMIN_DEFAULT_PASSWORD: admin_password
+    ports:
+      - "3333:80"
+    depends_on:
+      - postgres
+volumes:
+  postgres_data:
+    driver: local
