@@ -36,12 +36,12 @@ git clone https://github.com/Peddrinnz/api-alunos.git
 ```
 ### 🐳 2. Rodar o docker no carregabanco e o maven
 
-docker compose up -d
 mvn spring-boot:run
 
 ### 🚀 3. Rodar a API
 
 mvn spring-boot:run
+docker compose up -d
 
 ## 📌 Funcionalidades da API
  GET /alunos – Buscar todos os alunos
