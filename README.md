@@ -61,3 +61,30 @@ docker compose up -d
 ## O Diagrama DER
 
 Está no docs/diagrama_er.png
+
+## Objeto POST pessoas
+
+{
+    "nomeEstudante":"Teste",
+    "idade":22,
+    "sexo":"Masculino"
+}
+
+## Objeto POST Alunos (o idPessoa, colocar o numero da pessoa criada)
+
+{
+    "idPessoa": 135,
+    "pessoa": {
+        "idPessoa": 135,
+        "nomeEstudante": "Carlinhos",
+        "idade": 20,
+        "sexo": "Masculino"
+    },
+    "campus": "Campus Corumbá",
+    "polo": null,
+    "emailInstitucional": "gabriel.almeida6@estudante.ifms.edu.br",
+    "coordenacao": "COTAD",
+    "curso": "Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas - Tecnologia",
+    "situacao": "Em curso",
+    "periodoEntrada": "2019/1"
+}
