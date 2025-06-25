@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.corumba.api_alunos.model.AlunoModel;
@@ -46,6 +47,21 @@ public class AlunoController {
     @GetMapping
     public List<AlunoModel> getAllStudents() {
         return studentRepository.findAll();
+    }
+
+    @GetMapping("/search/by-name")
+    public List<AlunoModel> searchByName(@RequestParam String nome) {
+        return studentRepository.findByPessoa_NomeEstudanteContainingIgnoreCase(nome);
+    }
+
+    @GetMapping("/search/by-curso")
+    public List<AlunoModel> searchByCurso(@RequestParam String curso) {
+        return studentRepository.findByCursoContainingIgnoreCase(curso);
+    }
+
+    @GetMapping("/search/by-campus")
+    public List<AlunoModel> searchByCampus(@RequestParam String campus) {
+        return studentRepository.findByCampusContainingIgnoreCase(campus);
     }
 
     @PutMapping("/{id}")
